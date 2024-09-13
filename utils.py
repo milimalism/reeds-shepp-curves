@@ -1,5 +1,7 @@
 import math
 
+turning_radius = 2
+
 def M(theta):
     """
     Return the angle phi = theta mod (2 pi) such that -pi <= theta < pi.
@@ -25,8 +27,8 @@ def change_of_basis(p1, p2):
     (x1, y1) and rotation theta1.
     """
     theta1 = deg2rad(p1[2])
-    dx = p2[0] - p1[0]
-    dy = p2[1] - p1[1]
+    dx = (p2[0] - p1[0])/turning_radius
+    dy = (p2[1] - p1[1])/turning_radius
     new_x = dx * math.cos(theta1) + dy * math.sin(theta1)
     new_y = -dx * math.sin(theta1) + dy * math.cos(theta1)
     new_theta = p2[2] - p1[2]

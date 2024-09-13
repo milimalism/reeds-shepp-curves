@@ -9,20 +9,22 @@ import random as rd
 
 def main():
     # points to be followed
-    pts = [(-6,-7), (-6,0), (-4, 6), (0, 5), (0,-2), (-2, -6), (3, -5), (3, 6), (6, 4)]
+    # pts = [(-6,-7), (-6,0), (-4, 6), (0, 5), (0,-2), (-2, -6), (3, -5), (3, 6), (6, 4)]
 
-    # generate PATH so the vectors are pointing at each other
-    PATH = []
-    for i in range(len(pts) - 1):
-        dx = pts[i+1][0] - pts[i][0]
-        dy = pts[i+1][1] - pts[i][1]
-        theta = math.atan2(dy, dx)
-        PATH.append((pts[i][0], pts[i][1], utils.rad2deg(theta)))
-    PATH.append((pts[-1][0], pts[-1][1], 0))
+    # # generate PATH so the vectors are pointing at each other
+    # PATH = []
+    # for i in range(len(pts) - 1):
+    #     dx = pts[i+1][0] - pts[i][0]
+    #     dy = pts[i+1][1] - pts[i][1]
+    #     theta = math.atan2(dy, dx)
+    #     PATH.append((pts[i][0], pts[i][1], utils.rad2deg(theta)))
+    # PATH.append((pts[-1][0], pts[-1][1], 0))
 
     # or you can also manually set the angles:
     # PATH = [(-5,5,90),(-5,5,-90),(1,4,180), (5,4,0), (6,-3,90), (4,-4,-40),(-2,0,240), \
-    #         (-6, -7, 160), (-7,-1,80)]
+            # (-6, -7, 160), (-7,-1,80)]
+    PATH = [(-5,-5,0), (0,1, 90) , (3,2,270)]
+    # PATH = [(-5,-5,0), (-4,-3, 90)] #, (0,0,270), (3,2,90), (3,6,180)]
 
     # or just generate a random route:
     # PATH = []

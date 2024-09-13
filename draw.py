@@ -61,11 +61,11 @@ def draw_path(bob, path):
     for e in path:
         gear = 1 if e.gear == rs.Gear.FORWARD else -1
         if e.steering == rs.Steering.LEFT:
-            bob.circle(scale(1), gear * rad2deg(e.param))
+            bob.circle(scale(turning_radius), gear * rad2deg(e.param))
         elif e.steering == rs.Steering.RIGHT:
-            bob.circle(- scale(1), gear * rad2deg(e.param))
+            bob.circle(- scale(turning_radius), gear * rad2deg(e.param))
         elif e.steering == rs.Steering.STRAIGHT:
-            bob.forward(gear * scale(e.param))
+            bob.forward(gear * scale(e.param*turning_radius))
 
 def set_random_pencolor(bob):
     """
